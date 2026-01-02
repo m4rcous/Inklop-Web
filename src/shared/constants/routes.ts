@@ -1,0 +1,18 @@
+export const ROUTES = {
+  LOGIN: '/login',
+  REGISTER: '/register',
+  HOME: '/',
+  DASHBOARD: '/dashboard',
+  MESSAGES: '/messages',
+  BILLING: '/billing',
+  ACCOUNT_SETTINGS: '/account-settings',
+  CREATE_CAMPAIGN: '/create-campaign',
+  INFLUENCERS_UGC_CAMPAIGN: '/create-campaign/influencers-ugc',
+  INFLUENCERS_SETUP: '/create-campaign/influencers',
+  AI_CAMPAIGN: '/create-campaign/ai',
+  MANUAL_CAMPAIGN: '/create-campaign/manual',
+  CLIPPING_CAMPAIGN: '/create-campaign/clipping',
+  CHECKOUT: '/create-campaign/checkout',
+  CAMPAIGN_SUCCESS: '/create-campaign/success',
+  CAMPAIGN_ANALYSIS: '/campaign/:campaignId',
+} as const;

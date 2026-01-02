@@ -1,0 +1,307 @@
+.billing-page {
+  flex: 1;
+  padding: 40px;
+  background: #F5F5F5;
+}
+
+/* Header */
+.billing-header {
+  margin-bottom: 30px;
+}
+
+.billing-title{
+  font-family: 'Saans-TRIAL', 'Poppins', sans-serif;
+  font-weight: 570;
+  font-size: 30px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin: 0 0 6px 0;
+
+  /* “background gradient” aplicado al texto */
+  background: linear-gradient(0deg, #454545 0%, #000000 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* por si el navegador no soporta clip */
+  -webkit-text-fill-color: transparent;
+}
+
+.billing-subtitle{
+  font-family: 'Saans-TRIAL', 'Poppins', sans-serif;
+  font-weight: 380;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin: 0;
+
+  /* background rgba(0,0,0,1) lo interpretamos como texto negro */
+  color: rgba(0, 0, 0, 1);
+}
+
+/* Tarjetas de métricas */
+.billing-metrics{
+  display: flex;
+  gap: 15px;         /* gap Figma */
+  flex-wrap: nowrap; /* en desktop se ven 3 en una fila */
+  margin-bottom: 30px;
+}
+
+.billing-metric-card{
+  width: 498.6997px;
+  height: 143px;
+
+  border-radius: 17.57px;
+  padding: 17.57px 23.42px;
+
+  background: linear-gradient(0deg, #454545 0%, #000000 100%);
+  opacity: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;          /* gap interno Figma */
+  justify-content: flex-start;
+}
+
+.metric-card-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* icon arriba como en el mock */
+  margin: 0;               /* ya no uses margin-bottom, el spacing lo da el gap del card */
+}
+
+.metric-card-label{
+  font-family: "Saans-TRIAL", "Poppins", sans-serif;
+  font-weight: 380;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
+}
+
+.metric-card-value{
+  font-family: "FKT Gnarly Trial", "Saans-TRIAL", "Poppins", sans-serif;
+  font-weight: 450;
+  font-size: 35px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
+
+  margin: 0;
+}
+
+/* Contenido principal */
+.billing-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 24px;
+}
+
+/* Historial de facturación */
+.billing-history-section {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-family: "Saans-TRIAL", "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+}
+
+.search-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  background: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-icon-btn:hover {
+  background: #E5E5E5;
+}
+
+/* Registros de facturación */
+.billing-records {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.billing-record {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: #F9F9F9;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.billing-record:hover {
+  background: #F0F0F0;
+}
+
+.record-avatar{
+  width: 48px;
+  height: 48px;
+
+  border-radius: 10px;         /* Figma: 5 */
+  background: #FFFFFF;        /* fondo blanco */
+  border: 2px solid #8FD3FF;  /* celeste (ajusta si tu Figma tiene otro) */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #8FD3FF;             /* “P” celeste */
+  font-family: "Saans-TRIAL", "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 570;
+
+  flex-shrink: 0;
+}
+
+.record-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.record-transaction-id {
+  font-family: "Saans-TRIAL", "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.80);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.record-date {
+  font-family: "Saans-TRIAL", "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #999;
+}
+
+.record-amount {
+  font-family: "Saans-TRIAL", "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.80);
+  margin-right: 12px;
+}
+
+.refund-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  font-family: "Saans-TRIAL", "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #3b82f6;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.refund-btn:hover {
+  background: #EBF5FF;
+}
+
+.more-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.more-btn:hover {
+  background: #E5E5E5;
+}
+
+/* Distribución por campaña */
+.campaign-distribution-section {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.distribution-chart {
+  margin-top: 20px;
+}
+
+.distribution-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.legend-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.legend-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.legend-color-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-label {
+  font-family: "Saans-TRIAL", "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.legend-amount {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+}
+
+/* Responsive: cuando la pantalla se achica, apilar secciones */
+@media (max-width: 1100px){
+  .billing-content{
+    grid-template-columns: 1fr; /* 1 columna */
+  }
+}

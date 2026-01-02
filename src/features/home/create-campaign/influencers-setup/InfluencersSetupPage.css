@@ -1,0 +1,175 @@
+.influencers-setup-page {
+  min-height: 100vh;
+  padding: 40px;
+  background: rgba(241, 240, 238, 1); /* igual que la anterior */
+  position: relative;
+}
+
+/* Volver (mismo look que la anterior página) */
+.influencers-setup-page .back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;     /* no blanco */
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 40px;
+
+  font-family: 'Saans-TRIAL', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 380;
+  color: rgba(0, 0, 0, 1);
+  cursor: pointer;
+}
+
+
+.influencers-setup-page .back-button:hover { opacity: 0.8; }
+
+/* Setup Content */
+.setup-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Título/Subtítulo como la anterior */
+.setup-title {
+  font-family: 'Saans-TRIAL', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 570;
+  font-size: 50px;
+  line-height: 1;
+  text-align: center;
+  color: rgba(0, 0, 0, 1);
+  margin: 0 0 14px 0;
+}
+
+.setup-subtitle {
+  font-family: 'Saans-TRIAL', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 380;
+  font-size: 30px;
+  line-height: 1;
+  text-align: center;
+  color: rgba(113, 111, 114, 1);
+  margin: 0 0 60px 0;
+}
+
+.influencers-setup-page .setup-cards {
+  display: grid;
+  grid-template-columns: 563px 563px;
+  gap: 60px;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.influencers-setup-page .setup-card {
+  width: 563px;
+  height: 451px;
+  padding: 30px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 23px;
+
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.influencers-setup-page .setup-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.setup-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Imagen (pegada a la izquierda, no centrada) */
+.setup-card-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-left: 6px;
+}
+
+/* Título card */
+.setup-card-title {
+  font-family: 'Saans-TRIAL', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 570;
+  font-size: 25px;
+  line-height: 1;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+}
+
+/* Texto */
+.setup-card-description {
+  font-family: 'Saans-TRIAL', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 380;
+  font-size: 14px;
+  line-height: 1.35;
+  color: #111;
+  margin: 0;
+}
+
+/* Bullets */
+.setup-card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.setup-card-features li {
+  font-family: 'Saans-TRIAL', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 380;
+  font-size: 14px;
+  color: #111;
+  margin-bottom: 12px;
+  padding-left: 22px;
+  position: relative;
+  line-height: 1.35;
+}
+
+.setup-card-features li::before {
+  content: '•';
+  position: absolute;
+  left: 6px;
+  top: 0;
+  color: #000;
+  font-weight: 570;
+}
+
+.setup-card-features li:last-child {
+  margin-bottom: 0;
+}
+
+/* Botón (503px reales por el padding del card) */
+.setup-btn {
+  width: 100%;
+  height: 48px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(0deg, #454545 0%, #000000 100%);
+  color: #fff;
+
+  font-family: 'Saans-TRIAL', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 570;
+  font-size: 16px;
+
+  margin-top: auto; /* botón abajo */
+}
+
+.setup-btn:hover {
+  background: #1a1a1a;
+  transform: scale(1.02);
+}

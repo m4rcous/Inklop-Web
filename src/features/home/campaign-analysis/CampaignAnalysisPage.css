@@ -1,0 +1,1590 @@
+:root{
+  --font-saans: 'Saans-TRIAL', 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-money: 'FKT Gnarly Trial', 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  --grad-dark: linear-gradient(0deg, #454545 0%, #000000 100%);
+  --purple: #4B0258;
+  --desc-gray: #474B54;
+  --bar-bg: #D9D9D9;
+  --bar-fill: #5D0466;
+}
+
+.text-grad-dark{
+  background: var(--grad-dark);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.campaign-analysis-page {
+  flex: 1;
+  padding: 40px;
+  background: #F5F5F5;
+}
+
+/* Header Section */
+.campaign-header-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.campaign-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #FF9A9E 0%, #FAD0C4 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-letter {
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+}
+
+.campaign-header-info {
+  flex: 1;
+}
+
+.campaign-analysis-title{
+  font-family: var(--font-saans);
+  font-size: 30px;
+  font-weight: 570;
+  line-height: 1;
+  margin: 0 0 4px 0;
+  color: #000;
+}
+
+.campaign-name{
+  font-family: var(--font-saans);
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+  margin: 0;
+  color: #000;
+}
+
+.campaign-top-row{
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1fr; /* descripción más ancha */
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+
+/* La card de descripción ya no necesita margen abajo dentro de la fila */
+.campaign-top-row .campaign-description-card{
+  margin-bottom: 0;
+}
+
+.section-subtitle {
+  font-family: var(--font-saans);
+  font-size: 16px;
+  font-weight: 570;
+  line-height: 1;
+  margin: 0 0 12px 0;
+  /* gradiente como el figma */
+  background: var(--grad-dark);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.campaign-description-text{
+  font-family: var(--font-saans);
+  font-size: 16px;
+  font-weight: 380;
+  line-height: 1.4; /* 140% */
+  color: var(--desc-gray);
+  margin: 0;
+}
+
+/* Top Metrics */
+.campaign-top-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.duration-metric,
+.budget-metric{
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-label-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.metric-label{
+  font-family: var(--font-saans);
+  font-size: 16px;
+  font-weight: 570;
+  line-height: 1;
+
+  background: var(--grad-dark);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.metric-label.secondary{
+  font-family: var(--font-saans);
+  font-size: 16px;
+  font-weight: 380;
+  line-height: 1;
+  color: var(--purple);
+
+  /* quitar gradiente si se hereda */
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.metric-value-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.metric-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.metric-big-value{
+  font-family: var(--font-saans);
+  font-size: 20px;
+  font-weight: 570;
+  line-height: 1;
+  color: #000;
+}
+
+.metric-secondary-value{
+  font-family: var(--font-saans);
+  font-size: 20px;
+  font-weight: 570;
+  line-height: 1;
+  color: #000;
+}
+
+.metric-big-value.money,
+.metric-secondary-value.money{
+  font-family: var(--font-money);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.progress-bar-container{
+  width: 100%;
+  height: 7px;
+  background: var(--bar-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-bar-fill,
+.progress-bar-fill.purple{
+  height: 100%;
+  background: var(--bar-fill);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.progress-percentage{
+  margin-top: auto; /* empuja el % al final */
+}
+
+/* KPIs */
+.campaign-kpis{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;          /* en figma se ve aire */
+  margin-bottom: 24px;
+}
+
+/* Card KPI */
+.kpi-card{
+  background: #fff;
+  border-radius: 15px;
+  border: 1px solid rgba(227, 227, 227, 1);
+  padding: 15px 20px;
+  height: 104px;      /* si quieres igualar al “botón” del dashboard */
+  box-shadow: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Título KPI (gradiente) */
+.kpi-label{
+  font-family: var(--font-saans);
+  font-weight: 570;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0;
+
+  background: var(--grad-dark);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  margin: 0;
+}
+
+/* Fila número + icono */
+.kpi-value-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Número KPI (25px semibold) */
+.kpi-value{
+  font-family: var(--font-saans);
+  font-weight: 670;
+  font-size: 25px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #000;
+}
+
+/* Iconos (mantén en negro) */
+.kpi-value-row svg{
+  width: 24px;
+  height: 24px;
+  stroke: #000;
+}
+
+/* Responsive (por si acaso) */
+@media (max-width: 1200px){
+  .campaign-kpis{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px){
+  .campaign-kpis{ grid-template-columns: 1fr; }
+}
+
+/* Cards de chart */
+.charts-section{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.chart-card{
+  background: #fff;
+  border-radius: 24px;
+  border: 1px solid rgba(227,227,227,1);
+  padding: 26px 28px;
+  box-shadow: none;
+}
+
+/* títulos */
+.chart-title{
+  font-family: var(--font-saans);
+  font-size: 24px;
+  font-weight: 570;
+  line-height: 1;
+  margin: 0 0 8px 0;
+  color: #000;
+}
+
+.chart-subtitle{
+  font-family: var(--font-saans);
+  font-size: 16px;
+  font-weight: 380;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--desc-gray);
+}
+
+.chart-head{
+  margin-bottom: 18px;
+}
+
+/* Layout dona + leyenda */
+.chart-body{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 34px;
+  min-height: 220px;
+}
+
+.donut-wrap{
+  width: 260px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* leyenda */
+.chart-legend{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+}
+
+.legend-item{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.legend-dot{
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+}
+
+/* dots con gradiente tipo Figma */
+.legend-dot.ig{
+  background: linear-gradient(360deg, #7939CA 0%, #E82766 50.96%, #FEBD47 99.99%);
+}
+
+.legend-dot.tt{
+  background: linear-gradient(180deg, #00E9F0 0%, #081518 28.34%, #000000 65.48%, #CB0347 100%);
+}
+
+.legend-label{
+  font-family: var(--font-saans);
+  font-size: 18px;
+  font-weight: 380;
+  color: #000;
+}
+
+/* responsive */
+@media (max-width: 1200px){
+  .charts-section{ grid-template-columns: 1fr; }
+  .chart-body{ justify-content: center; }
+}
+@media (max-width: 720px){
+  .chart-body{ flex-direction: column; gap: 18px; }
+  .donut-wrap{ width: 100%; }
+}
+
+/* Bottom Sections */
+.bottom-sections {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.content-section,
+.ranking-section {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Título Contenido */
+.section-title-main{
+  font-family: var(--font-saans);
+  font-weight: 570;
+  font-size: 24px;
+  line-height: 1;
+  margin: 0 0 6px 0;
+
+  background: var(--grad-dark);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtítulo */
+.section-subtitle-main{
+  font-family: var(--font-saans);
+  font-weight: 380;
+  font-size: 20px;
+  line-height: 1;
+  margin: 0 0 18px 0;
+  color: #000;
+}
+
+/* Tabs centradas */
+.content-filters {
+  display: flex;
+  justify-content: flex-start;  /* Alinea los botones a la izquierda */
+  gap: 22px;
+  margin-bottom: 22px;
+  padding-left: 20px;  /* Añado un pequeño margen a la izquierda si necesitas */
+}
+
+/* Botones tabs */
+.content-filter-btn{
+  width: 117px;
+  height: 43px;
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+
+  font-family: var(--font-saans);
+  font-weight: 570;
+  font-size: 16px;
+  line-height: 1;
+  color: #000;
+
+  transition: transform .15s ease, background .2s ease, color .2s ease;
+}
+
+.content-filter-btn.active{
+  width: 111px;
+  background: var(--grad-dark);
+  color: #fff;
+}
+
+.content-filter-btn:hover{
+  transform: translateY(-1px);
+}
+
+/* GRID de videos (Todos/Aceptados/Denegados) */
+.content-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 297px); /* tamaño fijo */
+  gap: 22px;
+  justify-content: start; /* que no se centren/estiren */
+}
+
+.video-card{
+  background: #fff;
+  border: 1px solid rgba(227,227,227,1);
+  border-radius: 20px;
+  overflow: hidden;
+
+  display: flex;          /* ✅ */
+  flex-direction: column; /* ✅ */
+}
+
+/* thumbnail vertical */
+.video-thumb{
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: #eee;
+}
+.video-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-body{
+  padding: 14px 14px 16px;
+
+  display: flex;          /* ✅ */
+  flex-direction: column; /* ✅ */
+  flex: 1;                /* ✅ toma el alto disponible */
+}
+
+.video-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.video-username{
+  font-family: var(--font-saans);
+  font-weight: 570;
+  font-size: 16px;
+  color: #000;
+}
+
+/* icono plataforma */
+.platform-badge{
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+}
+
+.platform-badge.tiktok{
+  background: linear-gradient(180deg, #00E9F0 0%, #081518 28.34%, #000000 65.48%, #CB0347 100%);
+}
+.platform-badge.instagram{
+  background: linear-gradient(360deg, #7939CA 0%, #E82766 50.96%, #FEBD47 99.99%);
+}
+
+.video-caption{
+  font-family: var(--font-saans);
+  font-weight: 380;
+  font-size: 14px;
+  line-height: 1.35;
+  color: #111;
+  margin: 0 0 12px 0;
+
+  display: -webkit-box;        /* ✅ */
+  -webkit-box-orient: vertical;/* ✅ */
+  -webkit-line-clamp: 3;       /* ✅ 3 líneas (ajusta a 2 si quieres) */
+  overflow: hidden;            /* ✅ */
+
+  min-height: calc(1.35em * 3);/* ✅ reserva siempre el mismo espacio */
+}
+
+
+/* widgets stats */
+.video-stats{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+
+  margin-top: auto; /* ✅ empuja stats+botón al fondo */
+}
+
+
+.stat-pill{
+  background: #f2f2f2;
+  border-radius: 12px;
+  padding: 8px 10px;
+  text-align: center;
+
+  font-family: var(--font-saans);
+  font-weight: 570;
+  font-size: 12px;
+  color: #111;
+}
+
+/* botón */
+.details-btn{
+  width: 100%;
+  height: 36px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+
+  color: #fff;
+  font-family: var(--font-saans);
+  font-weight: 570;
+  font-size: 16px;
+
+  background: linear-gradient(180deg, #5D0466 0%, #2A002F 100%);
+}
+
+/* LISTA Reportado */
+.report-list{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.report-card{
+  background: #fff;
+  border: 1px solid rgba(227,227,227,1);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.report-left{
+  display: flex;
+  gap: 14px;
+}
+
+.report-avatar{
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: #d9d9d9;
+  flex: 0 0 auto;
+}
+
+.report-main{
+  flex: 1;
+}
+
+.report-name-row{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.report-name{
+  font-family: var(--font-saans);
+  font-weight: 570;
+  font-size: 18px;
+  color: #000;
+}
+
+.report-username{
+  font-family: var(--font-saans);
+  font-weight: 380;
+  font-size: 14px;
+  color: #666;
+}
+
+.report-comment{
+  margin: 0 0 6px 0;
+  font-family: var(--font-saans);
+  font-weight: 380;
+  font-size: 14px;
+  line-height: 1.35;
+  color: #111;
+}
+
+.report-date{
+  font-family: var(--font-saans);
+  font-weight: 380;
+  font-size: 12px;
+  color: #888;
+}
+
+/* estado */
+.status-pill{
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-family: var(--font-saans);
+  font-weight: 570;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.status-pill.revision{
+  background: #FFF7D6;
+  color: #111;
+}
+.status-pill.apelado{
+  background: #E7F8E9;
+  color: #1C7C2A;
+}
+.status-pill.denegado{
+  background: #FFE6E6;
+  color: #C80000;
+}
+
+/* Creator Card Preview */
+.content-placeholder {
+  margin-top: 20px;
+}
+
+.creator-card-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #F9F9F9;
+  border-radius: 12px;
+}
+
+.creator-avatar-placeholder {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #D3D3D3;
+}
+
+.creator-info-preview {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.creator-name-preview {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+}
+
+.creator-username-preview {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #666;
+}
+
+.creator-status {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
+}
+
+/* Creators Ranking */
+.creators-list{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 6px;
+}
+
+/* Card base (medidas del Figma) */
+.creator-ranking-card{
+  width: 500px;
+  height: 65px;
+  padding-left: 9px;
+  padding-right: 20px;
+  border-radius: 12.85px;
+
+  display: flex;
+  align-items: center;
+  gap: 21.41px;
+
+  border: 1px solid rgba(227,227,227,1);
+}
+
+/* Top 3: gradiente oscuro */
+.creator-ranking-card.top{
+  background: var(--grad-dark); /* linear-gradient(0deg, #454545 0%, #000000 100%) */
+  border: none;
+}
+
+/* Resto: blanco */
+.creator-ranking-card.normal{
+  background: #fff;
+}
+
+/* Avatar */
+.creator-avatar{
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #d9d9d9;
+}
+
+/* Textos */
+.creator-info{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.creator-name{
+  font-family: var(--font-saans);
+  font-weight: 570;
+  font-size: 16px;
+  line-height: 1;
+  color: #000;
+}
+
+.creator-username{
+  font-family: var(--font-saans);
+  font-weight: 380;
+  font-size: 14px;
+  line-height: 1;
+  color: #666;
+}
+
+.creator-views{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.views-value{
+  font-family: var(--font-saans);
+  font-weight: 670;
+  font-size: 18px;
+  line-height: 1;
+  color: #000;
+}
+
+.views-label{
+  font-family: var(--font-saans);
+  font-weight: 380;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Cuando es Top 3: texto blanco */
+.creator-ranking-card.top .creator-name,
+.creator-ranking-card.top .creator-username,
+.creator-ranking-card.top .views-value,
+.creator-ranking-card.top .views-label{
+  color: #fff;
+}
+
+/* Para que no se rompa en pantallas pequeñas */
+@media (max-width: 1200px){
+  .creator-ranking-card{ width: 100%; }
+}
+
+.ranking-section{
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* aquí controlas el espacio real */
+}
+
+/* por si el h3 no tiene section-title-main */
+.ranking-section h3{
+  margin: 0;
+}
+
+.ranking-section h3.section-title-main{ margin-bottom: 22px !important; }
+
+
+/* FIX: separa el título del listado (sí o sí) */
+.ranking-section .section-title-main{
+  margin: 0 0 22px 0 !important;
+}
+
+/* FIX: fuerza la lista a bajar */
+.ranking-section .creators-list{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Si algo la estuviera moviendo hacia arriba (por otra regla) */
+.ranking-section .creators-list{
+  position: static !important;
+  transform: none !important;
+}
+
+/* Ranking: separa título y lista (FORZADO) */
+.bottom-sections .ranking-section > h3.section-title-main{
+  margin: 0 0 22px 0 !important;  /* separa el título */
+  line-height: 1 !important;
+}
+
+.bottom-sections .ranking-section > .creators-list{
+  padding-top: 6px !important;    /* empuja un poquito más la lista */
+  margin-top: 0 !important;
+}
+
+/* aire extra solo para el primer card */
+.bottom-sections .ranking-section > .creators-list > .creator-ranking-card:first-child{
+  margin-top: 6px !important;
+}
+
+/* =========================
+   VIDEO MODAL (Ver Detalles)
+   ========================= */
+
+.video-modal-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  /* difuminado + oscurecido */
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.video-modal{
+  width: 380px;
+  max-width: calc(100vw - 48px);
+
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+
+  box-shadow: 0 18px 60px rgba(0,0,0,0.25);
+}
+
+/* Header: report | title | close */
+.video-modal-header{
+  display: grid;
+  grid-template-columns: 42px 1fr 42px;
+  align-items: center;
+  gap: 10px;
+
+  padding: 16px 16px 10px;
+}
+
+.video-modal-title{
+  text-align: center;
+  font-family: var(--font-saans);
+  font-size: 20px;
+  font-weight: 570;
+  color: #000;
+}
+
+.video-modal-report,
+.video-modal-close{
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  display: grid;
+  place-items: center;
+}
+
+.video-modal-close{
+  font-size: 24px;
+  line-height: 1;
+  color: #555;
+}
+
+/* Preview */
+.video-modal-preview{
+  padding: 0 16px;
+}
+
+.video-modal-preview img{
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+
+  /* si quieres que siempre se vea “vertical” como el mock */
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
+
+/* Sender row */
+.video-modal-sender{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 16px 10px;
+}
+
+.video-modal-avatar{
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.video-modal-sender-text{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.video-modal-sender-name{
+  font-family: var(--font-saans);
+  font-size: 18px;
+  font-weight: 570;
+  color: #000;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.video-modal-sender-date{
+  font-family: var(--font-saans);
+  font-size: 14px;
+  font-weight: 380;
+  color: #777;
+}
+
+/* badge plataforma dentro del nombre */
+.video-modal-platform{
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  flex: 0 0 auto;
+}
+
+.video-modal-platform.tiktok{
+  background: linear-gradient(180deg, #00E9F0 0%, #081518 28.34%, #000000 65.48%, #CB0347 100%);
+}
+.video-modal-platform.instagram{
+  background: linear-gradient(360deg, #7939CA 0%, #E82766 50.96%, #FEBD47 99.99%);
+}
+
+/* Metrics (2 cards) */
+.video-modal-metrics{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+
+  padding: 12px 16px 16px;
+}
+
+.video-modal-metric{
+  background: #F7F7F7;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.video-modal-metric-label{
+  font-family: var(--font-saans);
+  font-size: 14px;
+  font-weight: 380;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.video-modal-metric-value{
+  font-family: var(--font-saans);
+  font-size: 18px;
+  font-weight: 570;
+  color: #000;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.video-modal-metric-value svg{
+  width: 18px;
+  height: 18px;
+  stroke: #000;
+}
+
+/* Reject reason (solo denegados) */
+.video-modal-reject{
+  margin: 0 16px 16px;
+  padding: 12px 14px;
+
+  background: #EDEDED;
+  border-radius: 14px;
+
+  font-family: var(--font-saans);
+  font-size: 14px;
+  font-weight: 380;
+  line-height: 1.35;
+  color: #222;
+}
+
+/* ===========================
+   REPORT FORM (como tu imagen)
+   =========================== */
+.report-modal-body{
+  padding: 4px 18px 18px;
+}
+
+.report-modal-title-row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 4px 0 10px;
+}
+
+.report-flag{
+  font-size: 16px;
+  transform: translateY(-1px);
+}
+
+.report-modal-title-text{
+  font-family: var(--font-saans);
+  font-size: 16px;
+  font-weight: 570;
+  color: #E44646; /* rojito del título */
+}
+
+.report-modal-subtitle{
+  margin: 0 0 12px 0;
+  text-align: left;
+
+  font-family: var(--font-saans);
+  font-size: 13px;
+  font-weight: 570;
+  color: #000;
+  line-height: 1.35;
+}
+
+.report-modal-textarea{
+  width: 100%;
+  min-height: 120px;
+  resize: none;
+
+  padding: 12px 12px;
+  border-radius: 10px;
+  border: 1px solid #D6D6D6;
+  outline: none;
+
+  font-family: var(--font-saans);
+  font-size: 13px;
+  font-weight: 380;
+  color: #111;
+  background: #fff;
+}
+
+.report-modal-textarea::placeholder{
+  color: #9A9A9A;
+}
+
+.report-modal-send-btn{
+  width: 100%;
+  height: 38px;
+  margin-top: 12px;
+
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  font-family: var(--font-saans);
+  font-weight: 570;
+  font-size: 14px;
+  color: #fff;
+
+  background: var(--grad-dark);
+}
+
+.report-modal-send-btn:disabled{
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+/* ===========================
+   REPORT SUCCESS (como tu 2da imagen)
+   =========================== */
+.report-success-body{
+  padding: 26px 24px 22px;
+  text-align: center;
+}
+
+/* antes: seguramente tenía background negro + sombra + border-radius */
+.report-success-check{
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.report-success-icon{
+  width: 56px;   /* ajusta al tamaño que quieras */
+  height: 56px;
+  display: block;
+  object-fit: contain;
+}
+
+.report-success-text{
+  margin: 0 0 18px 0;
+
+  font-family: var(--font-saans);
+  font-size: 14px;
+  font-weight: 380;
+  color: #111;
+  line-height: 1.4;
+}
+
+.report-success-btn{
+  width: 100%;
+  height: 38px;
+
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  font-family: var(--font-saans);
+  font-weight: 570;
+  font-size: 14px;
+  color: #fff;
+
+  background: var(--grad-dark);
+}
+
+.report-title-icon{
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.report-success-icon{
+  display: block;
+  margin: 10px auto 18px;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.report-success-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* --- Report list clickable --- */
+.report-card-clickable { cursor: pointer; }
+.report-card-clickable:hover { transform: translateY(-1px); box-shadow: 0 10px 28px rgba(0,0,0,.08); }
+.report-card { transition: transform .12s ease, box-shadow .12s ease; }
+
+/* --- Modal overlay (blur) --- */
+.report-modal-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: rgba(0,0,0,.25);
+  backdrop-filter: blur(10px);
+}
+
+/* --- Modal container --- */
+.report-modal{
+  position: relative;
+  width: 880px;
+  height: 512px;
+  padding: 20px;
+  border-radius: 20px;
+  background: #fff;
+  opacity: 1;
+  box-shadow: 0 25px 70px rgba(0,0,0,.18);
+}
+
+.report-modal-close{
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  font-size: 26px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* --- Grid --- */
+.report-modal-grid{
+  height: 100%;
+  display: grid;
+  grid-template-columns: 280px 1fr; /* preview | details (ajustable) */
+  gap: 38px;
+  align-items: stretch;
+}
+
+.report-modal-preview{
+  border-radius: 16px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.report-modal-preview img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Right side --- */
+.report-modal-preview img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.report-modal-title{
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.report-modal-user-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.report-modal-user{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.report-modal-avatar{
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #d9d9d9;
+}
+
+.report-modal-name{ font-weight: 800; font-size: 18px; }
+.report-modal-username{ color: #777; font-size: 14px; }
+
+.report-modal-state{ text-align: right; }
+.report-modal-state-label{ font-size: 12px; color: #888; margin-bottom: 8px; }
+
+.report-modal-pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.report-modal-pill.revision{ background: #FFF7DB; color: #1b1b1b; }
+.report-modal-pill.denegado{ background: #FFE7E7; color: #D40000; }
+.report-modal-pill.apelado{ background: #E9FFE9; color: #0B8F2A; }
+
+.report-modal-divider{
+  height: 1px;
+  background: #eaeaea;
+  margin: 18px 0;
+}
+
+.report-modal-block-label{
+  font-size: 13px;
+  color: #8a8a8a;
+  margin-bottom: 8px;
+}
+
+.report-modal-block-text{
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+/* Respuesta (barra negra) */
+.report-modal-response{
+  margin-top: 18px;
+  background: #111;
+  color: #fff;
+  border-radius: 16px;
+  padding: 16px 18px;
+}
+
+.report-modal-response-title{
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.report-modal-response-text{
+  opacity: .95;
+  line-height: 1.35;
+}
+
+/* Metrics abajo */
+.report-modal-metrics{
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.report-modal-metric-card{
+  background: #f5f6f8;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+}
+
+.report-modal-metric-label{
+  color: #666;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.report-modal-metric-value{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 1000px){
+  .report-modal-grid{ grid-template-columns: 1fr; }
+  .report-modal-preview img{ height: 280px; }
+}
+
+/* Responsive: en pantallas chicas, que baje a una columna */
+@media (max-width: 940px){
+  .report-modal{
+    width: calc(100vw - 40px);
+    height: auto;
+  }
+  .report-modal-grid{
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .report-modal-preview{
+    height: 280px;
+  }
+}
+
+/* =========================================
+   FIX: métricas fijas abajo en Report Modal
+   ========================================= */
+
+/* Columna derecha: hace de contenedor relativo */
+.report-modal-details{
+  position: relative;
+  height: 100%;
+  overflow: hidden;          /* evita que algo se salga */
+  padding-bottom: 112px;     /* reserva espacio para las métricas */
+}
+
+/* Si el contenido de arriba puede ser largo,
+   haz scroll solo arriba (sin mover métricas) */
+.report-modal-details > :not(.report-modal-metrics){
+  /* opcional: si quieres que todo el contenido "arriba" pueda scrollear */
+}
+
+/* Mover métricas a posición fija inferior */
+.report-modal-metrics{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  margin-top: 0 !important; /* cancela tu margin-top actual */
+  padding-top: 14px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  /* si quieres que se vea más “separado” del contenido */
+  background: #fff;                 /* para que no se vea texto debajo */
+  border-top: 1px solid #eee;       /* línea sutil */
+}
+
+/* Opcional: asegura que el bloque de respuesta no empuje nada raro */
+.report-modal-response{
+  margin-bottom: 14px;
+}
+
+.video-caption-row{
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0 0 12px 0; /* mantiene el espacio que antes daba el <p> */
+}
+
+.video-caption-row{
+  display: flex;
+  gap: 8px;
+  align-items: center;   /* <-- centro vertical real */
+  margin: 0 0 12px 0;
+}
+
+.video-platform-icon{
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  display: block;
+  margin-top: 0;         /* <-- quita cualquier empuje hacia arriba */
+  align-self: center;    /* <-- por si algo lo sobreescribe */
+}
+
+.video-caption{
+  margin: 0;
+  flex: 1;
+}
+
+.video-head{
+  justify-content: flex-start;
+}
+
+.stat-pill{
+  background: #f2f2f2;
+  border-radius: 10px;
+  padding: 5px 8px;
+
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  align-items: center;
+  column-gap: 0px;
+
+  min-width: 0;          /* CLAVE: evita que el 4to se “corte” */
+  white-space: nowrap;   /* no partir */
+
+  font-family: var(--font-saans);
+  font-weight: 570;
+  font-size: 12px;
+  color: #111;
+}
+
+.stat-icon{
+  margin-right: 0;
+  width: 15px;
+  height: 15px;
+  display: grid;
+  place-items: center;
+}
+
+.stat-value{
+  text-align: right;
+  justify-self: end;
+}
+
+.stat-pill{
+  background: #5A5A5A;   /* gris (ajústalo al de tu Figma) */
+  color: #fff;           /* texto por defecto blanco */
+}
+
+.stat-icon,
+.stat-value{
+  color: #fff;
+}
+
+.stat-pill{
+  background: #5A5A5A;  /* gris */
+  color: #fff;          /* afecta a los svg (currentColor) y al texto */
+}
+
+.stat-icon{
+  color: #fff;          /* asegura stroke blanco */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon svg{
+  display: block;
+}
+
+.video-modal-report{
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background: #E44646;  /* rojo */
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;          /* hace el stroke blanco (currentColor) */
+  cursor: pointer;
+}
+.video-modal-report svg{
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+.video-modal-platform-icon{
+  width: 25px;
+  height: 25px;
+  flex: 0 0 auto;
+  display: block;
+}
+
+.report-success-body{
+  padding-top: 0;
+}

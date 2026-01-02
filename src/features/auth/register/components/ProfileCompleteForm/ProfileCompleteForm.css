@@ -1,0 +1,250 @@
+.profile-complete-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #F1F0EE;
+}
+
+.profile-complete-card {
+  width: 100%;
+  max-width: 496px;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-complete-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-image {
+  width: 138px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.profile-image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-image-circle {
+  width: 112px;
+  height: 112px;
+  border-radius: 31.5px;
+  background-color: #F1F0EE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 16px 18px;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-default-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.upload-button {
+  width: 126px;
+  height: 31px;
+  background-color: rgba(72, 72, 72, 1);
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 570;
+  line-height: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease-out;
+}
+
+.upload-button:hover {
+  background-color: #000000;
+}
+
+.profile-complete-title {
+  font-size: 25px;
+  font-weight: 570;
+  color: #000000;
+  text-align: center;
+  margin: 0;
+  max-width: 560px;
+  align-self: center;
+}
+
+.profile-complete-subtitle {
+  font-size: 16px;
+  font-weight: 380;
+  color: #716F72;
+  text-align: center;
+  margin: 0;
+  line-height: 100%;
+}
+
+.profile-complete-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 16px;
+  font-weight: 380;
+  color: #000000;
+}
+
+.form-input,
+.form-select {
+  height: 40px;
+  background-color: #F1F0EE;
+  border: none;
+  border-radius: 10px;
+  padding: 0 15px;
+  font-size: 16px;
+  font-weight: 380;
+  color: #000000;
+  font-family: inherit;
+  outline: none;
+  transition: background-color 0.3s ease-out;
+}
+
+.username-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #F1F0EE;
+  border-radius: 10px;
+  height: 40px;
+  transition: background-color 0.3s ease-out;
+}
+
+.username-input-wrapper:focus-within {
+  background-color: #E8E7E5;
+}
+
+.username-prefix {
+  padding-left: 15px;
+  font-size: 16px;
+  font-weight: 380;
+  color: #000000;
+}
+
+.username-input {
+  padding-left: 5px !important;
+  background-color: transparent !important;
+  flex: 1;
+}
+
+.form-input::placeholder {
+  color: #B9B9B9;
+}
+
+.form-input:focus,
+.form-select:focus {
+  background-color: #E8E7E5;
+}
+
+.form-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  padding-right: 40px;
+}
+
+.form-select option {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.form-textarea {
+  background-color: #F1F0EE;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 380;
+  color: #000000;
+  font-family: inherit;
+  outline: none;
+  resize: vertical;
+  min-height: 120px;
+  transition: background-color 0.3s ease-out;
+}
+
+.form-textarea::placeholder {
+  color: #B9B9B9;
+}
+
+.form-textarea:focus {
+  background-color: #E8E7E5;
+}
+
+.profile-complete-form .button {
+  margin-top: 17px;
+  width: 218px;
+  align-self: center;
+}
+
+/* Quitar contornos reales y "fantasma" (override fuerte) */
+.profile-complete-card .form-input,
+.profile-complete-card .form-select,
+.profile-complete-card .form-textarea {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Si algún estilo global mete borde al focus */
+.profile-complete-card .form-input:focus,
+.profile-complete-card .form-select:focus,
+.profile-complete-card .form-textarea:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.profile-complete-card .form-textarea {
+  background-color: #F1F0EE !important; /* o el tono exacto de tu Figma */
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .profile-complete-card {
+    padding: 40px 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,195 @@
+.create-campaign-page {
+  flex: 1;
+  min-height: 100vh;
+  padding: 40px;
+  background: rgba(241, 240, 238, 1); /* Figma */
+  position: relative;
+}
+
+/* Back Button */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  /* que no se vea “botón blanco” */
+  background: transparent;                 /* o rgba(241,240,238,1) si prefieres */
+  border: none;
+  box-shadow: none;
+
+  padding: 0;
+  margin-bottom: 40px;
+
+  /* tipografía (si aún no tienes Saans cargada, caerá al fallback) */
+  font-family: 'Saans-TRIAL', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 380;
+  color: rgba(0, 0, 0, 1);
+  cursor: pointer;
+}
+
+.back-button:hover {
+  opacity: 0.8;
+}
+
+/* Campaign Type Selection Content */
+.campaign-type-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Title / Subtitle */
+.campaign-type-title {
+  font-family: 'Saans-TRIAL', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 570;     /* Figma */
+  font-size: 50px;      /* Figma */
+  line-height: 1;       /* 100% */
+  letter-spacing: 0;
+  text-align: center;
+  color: rgba(0, 0, 0, 1);
+  margin: 0 0 14px 0;
+}
+
+.campaign-type-subtitle {
+  font-family: 'Saans-TRIAL', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 380;     /* Figma */
+  font-size: 30px;      /* Figma */
+  line-height: 1;       /* 100% */
+  letter-spacing: 0;
+  text-align: center;
+  color: rgba(113, 111, 114, 1); /* Figma */
+  margin: 0 0 60px 0;
+}
+
+/* Campaign Type Cards */
+.campaign-type-cards{
+  display: grid;
+  grid-template-columns: repeat(2, 563px); /* Figma */
+  gap: 60px;
+  justify-content: center;
+  max-width: calc(563px * 2 + 60px);
+  margin: 0 auto;
+}
+
+.campaign-type-card{
+  width: 563px;             /* Figma */
+  height: 511px;            /* Figma */
+  padding: 30px;            /* Figma */
+  border-radius: 30px;      /* Figma */
+  background: rgba(255, 255, 255, 1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  /* << alinea todo a la izquierda */
+  text-align: left;
+  gap: 23px;                /* Figma */
+
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.campaign-type-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.card-image{
+  width: 70px;              /* ajústalo si en Figma se ve más grande */
+  height: 70px;
+  object-fit: contain;
+
+  /* “más del lado izquierdo con espacio”, no centrado */
+  margin-left: 6px;
+}
+
+/* Título de card */
+.card-title{
+  font-family: 'Saans-TRIAL', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 570;
+  font-size: 25px;
+  line-height: 1;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+}
+
+/* Texto */
+.card-description{
+  font-family: 'Saans-TRIAL', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 380;
+  font-size: 16px;
+  line-height: 1.35;
+  color: #111;
+  margin: 0;
+}
+
+/* Bullets */
+.card-features{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.card-features li{
+  font-family: 'Saans-TRIAL', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 380;
+  font-size: 15px;
+  color: #111;
+  margin-bottom: 12px;
+  padding-left: 22px;
+  position: relative;
+  line-height: 1.35;
+}
+
+.card-features li::before{
+  content: '•';
+  position: absolute;
+  left: 6px;
+  top: 0;
+  color: #000; /* en Figma es negro */
+  font-weight: 570;
+}
+
+.card-features li:last-child {
+  margin-bottom: 0;
+}
+
+/* Botón Seleccionar (calza 503px por el padding del card) */
+.select-campaign-btn{
+  width: 100%;
+  height: 48px;              /* Figma */
+  padding: 10px;             /* Figma */
+  border-radius: 10px;       /* Figma */
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(0deg, #454545 0%, #000000 100%);
+  color: #fff;
+
+  font-family: 'Saans-TRIAL', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 570;
+  font-size: 16px;
+
+  margin-top: auto;          /* empuja el botón al fondo del card */
+}
+
+.select-campaign-btn:hover{
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+/* Responsive: cuando el ancho es pequeño, Clipping baja debajo de Influencers */
+@media (max-width: 1280px) {
+  .campaign-type-cards {
+    grid-template-columns: 1fr;   /* pasa a 1 columna */
+    justify-items: center;        /* centra la card dentro de la columna */
+    max-width: 563px;             /* evita que se estire raro */
+    gap: 24px;                    /* opcional: reduce el gap en mobile */
+  }
+
+  .campaign-type-card {
+    width: 100%;
+    max-width: 563px;
+  }
+}

@@ -1,0 +1,2090 @@
+.clipping-campaign-page {
+  min-height: 100vh;
+  padding: 40px;
+  background: #E8E8E8;
+  position: relative;
+}
+
+/* Back to Dashboard Button */
+.back-to-dashboard-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 40px;
+}
+
+.back-to-dashboard-btn:hover {
+  opacity: 0.7;
+}
+
+/* Campaign Container */
+.clipping-campaign-container {
+  max-width: 950px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 24px;
+  padding: 30px 30px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.clipping-campaign-container .campaign-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.campaign-header-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.clipping-campaign-container .campaign-header .campaign-title {
+  font-family: "Saans-TRIAL", sans-serif;
+  font-weight: 570;
+  /* Medium */
+  font-style: normal;
+  font-size: 37px;
+  line-height: 1;
+  /* 100% */
+  letter-spacing: 0;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+}
+
+.clipping-campaign-container .campaign-header .campaign-subtitle {
+  font-family: "Saans-TRIAL", sans-serif;
+  font-weight: 380;
+  font-style: normal;
+  font-size: 27px;
+  line-height: 1;
+  /* 100% */
+  letter-spacing: 0;
+  margin: 0;
+}
+
+/* Stepper */
+.clipping-campaign-container .stepper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.stepper-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+.stepper-step {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #E8E8E8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.stepper-step svg {
+  stroke: #999;
+}
+
+.stepper-step.active {
+  background: #000;
+}
+
+.stepper-step.active svg {
+  stroke: white;
+}
+
+.stepper-step-icon {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+.stepper-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #999;
+  text-align: center;
+  white-space: pre-line;
+  line-height: 1.4;
+}
+
+.stepper-label.active {
+  color: #000;
+  font-weight: 500;
+}
+
+.stepper-line {
+  position: absolute;
+  top: 28px;
+  left: calc(50% + 28px);
+  right: calc(-50% + 28px);
+  height: 2px;
+  background: #E8E8E8;
+  z-index: 1;
+}
+
+.stepper-line.active {
+  background: #000;
+}
+
+/* Step Content */
+.step-content {
+  width: 100%;
+}
+
+/* Form Groups */
+.clipping-campaign-container .form-group {
+  margin-bottom: 40px;
+}
+
+.clipping-campaign-container .form-label {
+  font-family: "Saans-TRIAL", sans-serif;
+  font-weight: 380;
+  /* Regular */
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1;
+  /* 100% */
+  letter-spacing: 0;
+  color: rgba(104, 104, 104, 1);
+  margin-bottom: 5px;
+}
+
+.clipping-campaign-container .form-input {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+  background: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #000;
+  transition: all 0.2s ease;
+}
+
+.clipping-campaign-container .form-input:focus {
+  border: 1px solid rgba(104, 104, 104, 1);
+  ;
+  outline: none;
+  box-shadow: none;
+}
+
+.clipping-campaign-container .form-input::placeholder {
+  font-family: "Saans-TRIAL", sans-serif;
+  font-weight: 380;
+  font-style: normal;
+  font-size: 17px;
+  line-height: 1;
+  /* 100% */
+  letter-spacing: 0;
+  color: rgba(104, 104, 104, 1);
+  /* OJO: esto es el color del texto */
+  opacity: 0.7;
+  /* evita que el placeholder se vea “más clarito” */
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+  background: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #000;
+  transition: all 0.2s ease;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-textarea::placeholder {
+  color: #999;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: #000;
+}
+
+/* Form Row */
+.clipping-campaign-container .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 64px;
+  align-items: start;
+}
+
+.clipping-campaign-container.step-1 .form-row {
+  grid-template-columns: 1fr 200px;
+}
+
+.clipping-campaign-container.step-1 .form-row> :nth-child(2) {
+  justify-self: end;
+  width: 200px;
+}
+
+/* File Upload Button */
+.clipping-campaign-container .file-upload-btn {
+  width: 315px;
+  height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+  gap: 10px;
+
+  border-radius: 15px;
+  border: 1px solid #E0E0E0;
+  background: rgba(208, 208, 208, 1);
+
+  opacity: 1;
+
+  font-family: "Saans-TRIAL", sans-serif;
+  font-weight: 380;
+  font-size: 14px;
+  line-height: 1;
+  color: #000;
+
+  cursor: pointer;
+}
+
+.clipping-campaign-container .file-upload-btn:hover {
+  opacity: 0.9;
+}
+
+.file-name {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Requirement Input Group */
+.requirement-input-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.add-btn {
+  width: 44px;
+  height: 44px;
+  background: #000;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.add-btn:hover {
+  background: #333;
+}
+
+.add-btn svg {
+  color: white;
+}
+
+.requirements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.requirement-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #F8F8F8;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+}
+
+.requirement-item span {
+  font-size: 14px;
+  color: #333;
+  flex: 1;
+  font-family: 'Poppins', sans-serif;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.remove-btn svg {
+  color: #999;
+}
+
+.remove-btn:hover svg {
+  color: #D32F2F;
+}
+
+/* Form Hint */
+.form-hint {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #999;
+  margin: 4px 0 0 0;
+}
+
+/* Payment Cards */
+.payment-card {
+  padding: 20px 24px;
+  border-radius: 12px;
+  min-height: 100px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 18px;
+}
+
+.payment-card-left {
+  min-width: 110px;
+}
+
+.payment-card-right {
+  display: flex;
+  align-items: center;
+}
+
+.payment-card-value {
+  font-family: "Saans-TRIAL", sans-serif;
+  font-weight: 570;
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.payment-card-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Payment Card Purple */
+.payment-card-purple {
+  background: linear-gradient(135deg, #6B2D8F 0%, #470573 100%);
+  color: white;
+  border: none;
+}
+
+.payment-card-purple .payment-card-value {
+  color: white;
+}
+
+.payment-card-purple .payment-card-description {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Payment Card Max */
+.payment-card-max {
+  background: #ffffff;
+  border: 1px solid #E0E0E0;
+  color: #000;
+}
+
+.payment-card-max .payment-card-value,
+.payment-card-max .payment-card-description {
+  color: #000;
+}
+
+/* Payment Card Empty State */
+.payment-card-empty {
+  background: rgba(228, 228, 228, 1) !important;
+  border: 1px solid rgba(228, 228, 228, 1) !important;
+}
+
+.payment-card-empty .payment-card-value,
+.payment-card-empty .payment-card-description {
+  color: rgba(158, 158, 158, 1) !important;
+}
+
+/* Container Specific Overrides */
+.clipping-campaign-container .payment-card.payment-card-max {
+  background: #fff !important;
+  background-image: none !important;
+  border: 1px solid #E0E0E0 !important;
+  color: #000 !important;
+}
+
+.clipping-campaign-container .payment-card.payment-card-max .payment-card-value,
+.clipping-campaign-container .payment-card.payment-card-max .payment-card-description {
+  color: #000 !important;
+}
+
+.clipping-campaign-container .payment-card-purple {
+  background: linear-gradient(360deg, #000000 0%, #470573 100%) !important;
+  background-image: linear-gradient(360deg, #000000 0%, #470573 100%) !important;
+  color: #fff;
+  border: none;
+}
+
+.clipping-campaign-container .payment-card-purple .payment-card-value,
+.clipping-campaign-container .payment-card-purple .payment-card-description {
+  color: #fff;
+}
+
+/* Empty State Overrides */
+.clipping-campaign-container .payment-card.payment-card-purple.payment-card-empty {
+  background: rgba(228, 228, 228, 1) !important;
+  background-image: none !important;
+  border: 1px solid rgba(228, 228, 228, 1) !important;
+}
+
+.clipping-campaign-container .payment-card.payment-card-purple.payment-card-empty .payment-card-value,
+.clipping-campaign-container .payment-card.payment-card-purple.payment-card-empty .payment-card-description {
+  color: rgba(158, 158, 158, 1) !important;
+}
+
+.clipping-campaign-container .payment-card.payment-card-max.payment-card-empty {
+  background: rgba(228, 228, 228, 1) !important;
+  background-image: none !important;
+  border: 1px solid rgba(228, 228, 228, 1) !important;
+}
+
+.clipping-campaign-container .payment-card.payment-card-max.payment-card-empty .payment-card-value,
+.clipping-campaign-container .payment-card.payment-card-max.payment-card-empty .payment-card-description {
+  color: rgba(158, 158, 158, 1) !important;
+}
+
+.clipping-campaign-container .payment-card.payment-card-max:not(.payment-card-empty) {
+  background: #fff !important;
+  background-image: none !important;
+  border: 1px solid #E0E0E0 !important;
+  color: #000 !important;
+}
+
+.clipping-campaign-container .payment-card.payment-card-max:not(.payment-card-empty) .payment-card-value,
+.clipping-campaign-container .payment-card.payment-card-max:not(.payment-card-empty) .payment-card-description {
+  color: #000 !important;
+}
+
+/* Step Actions */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.radio-option input[type="radio"] {
+  display: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #E0E0E0;
+  border-radius: 50%;
+  margin-right: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.radio-option input[type="radio"]:checked {
+  border-color: white;
+  background: white;
+}
+
+.radio-option input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+}
+
+.radio-option span {
+  font-family: "Saans-TRIAL", sans-serif;
+  font-weight: 380;
+  /* Regular */
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1;
+  /* 100% */
+  letter-spacing: 0;
+}
+
+.radio-option.selected {
+  background: linear-gradient(0deg, #454545 0%, #000000 100%);
+  border-color: #000;
+  /* opcional */
+}
+
+.radio-option.selected span {
+  color: #fff;
+}
+
+.radio-option:hover {
+  border-color: #999;
+}
+
+/* Checkbox Grid */
+/* Review Section */
+.review-section {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+.review-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 16px;
+}
+
+.review-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+}
+
+.review-value {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.edit-btn {
+  background: none;
+  border: none;
+  color: #6B2D8F;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.edit-btn:hover {
+  text-decoration: underline;
+}
+
+/* Guidelines List */
+.guidelines-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.guideline-item {
+  padding: 12px 16px;
+  background: #F8F8F8;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Social Review */
+.review-step .social-review {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.review-step .social-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-step .social-info {
+  flex: 1;
+}
+
+.social-review-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.social-username {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.social-url {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Platforms Review */
+.platforms-review {
+  display: flex;
+  gap: 12px;
+}
+
+.platform-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #F5F5F5;
+  border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+}
+
+.platform-badge img {
+  flex-shrink: 0;
+}
+
+/* Budget Review */
+.review-budget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.budget-label-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  flex: 1;
+}
+
+.budget-review-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.budget-review-row .budget-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.budget-review-row .budget-value {
+  font-family: "Saans-TRIAL", sans-serif;
+  font-weight: 570;
+  font-size: 20px;
+  color: #000;
+  line-height: 1.3;
+}
+
+/* Checkbox Grid */
+.checkbox-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checkbox-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.checkbox-option input[type="checkbox"] {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+  border: 1px solid #333;
+  border-radius: 50%;
+  margin-right: 12px;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox-option input[type="checkbox"]:checked {
+  border-color: white;
+  background: white;
+}
+
+.checkbox-option input[type="checkbox"]:checked::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.checkbox-option span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.checkbox-option.selected {
+  background: linear-gradient(0deg, #454545 0%, #000000 100%);
+  border-color: #000;
+}
+
+.checkbox-option.selected span {
+  color: white;
+}
+
+.checkbox-option:hover {
+  border-color: #999;
+}
+
+/* Step Actions */
+.clipping-campaign-container .step-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 30px;
+  border-top: none !important;
+}
+
+.btn-secondary {
+  padding: 14px 32px;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+  background: white;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: #F9F9F9;
+}
+
+.btn-primary {
+  padding: 14px 32px;
+  border-radius: 8px;
+  border: none;
+  background: #000;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #1a1a1a;
+}
+
+.btn-primary:disabled {
+  background: #E0E0E0;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* Checkbox List (vertical) */
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Social Connections */
+.social-connections {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.social-account-connect,
+.social-account-connected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.social-account-connected {
+  background: #F5F5F5;
+}
+
+.social-account-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-account-info svg {
+  flex-shrink: 0;
+}
+
+.social-account-info span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #333;
+}
+
+.clipping-campaign-container .connect-btn {
+  width: 87px;
+  height: 32px;
+  padding: 10px;
+  gap: 10px;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(360deg, #000000 0%, #470573 100%);
+  opacity: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Saans-TRIAL", sans-serif;
+  font-weight: 380;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1;
+  /* 100% */
+  letter-spacing: 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.delete-account-btn {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-account-btn:hover {
+  background: #FFE5E5;
+}
+
+.delete-account-btn svg {
+  stroke: #666;
+}
+
+.delete-account-btn:hover svg {
+  stroke: #D32F2F;
+}
+
+/* Brief Content (Step 5) */
+.brief-content {
+  background: white;
+  border: 1px solid #E0E0E0;
+  border-radius: 12px;
+  padding: 32px;
+  text-align: left;
+}
+
+.brief-content h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  margin: 24px 0 12px 0;
+}
+
+.brief-content h3:first-child {
+  margin-top: 0;
+}
+
+.brief-content p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+}
+
+.brief-content ol,
+.brief-content ul {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+  padding-left: 24px;
+}
+
+.brief-content li {
+  margin-bottom: 8px;
+}
+
+.brief-content strong {
+  font-weight: 600;
+  color: #000;
+}
+
+/* Review Sections (Step 6) */
+.review-section {
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+.review-section:last-of-type {
+  border-bottom: none;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.review-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  flex: 1;
+}
+
+.edit-btn {
+  padding: 6px 16px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: #666;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edit-btn:hover {
+  background: #F5F5F5;
+  color: #000;
+}
+
+.review-value {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Guidelines List */
+.guidelines-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.guideline-item {
+  background: #F5F5F5;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+}
+
+/* Social Review */
+.social-review {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: white;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+}
+
+.social-username {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+}
+
+.social-url {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #666;
+}
+
+/* Platforms Review */
+.platforms-review {
+  display: flex;
+  gap: 12px;
+}
+
+.platform-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid #E0E0E0;
+  border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #000;
+}
+
+/* Budget Review */
+.budget-review {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.budget-item {
+  text-align: left;
+}
+
+.budget-value {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+}
+
+/* Inline form groups for checkout */
+.form-group.inline {
+  display: flex;
+  gap: 16px;
+}
+
+.form-group.inline>div {
+  flex: 1;
+}
+
+/* Checkout */
+.checkout-card {
+  background: #F5F5F5;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #E0E0E0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.checkout-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.checkout-header h3 {
+  margin: 0 0 8px 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.checkout-header p {
+  margin: 0;
+  color: #666;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+
+.checkout-summary {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #E0E0E0;
+  min-width: 260px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.summary-row.total {
+  border-top: 1px solid #E0E0E0;
+  margin-top: 8px;
+  padding-top: 12px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.payment-section {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #E0E0E0;
+  padding: 20px;
+}
+
+.payment-methods {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.payment-option {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+  background: #F7F7F7;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.payment-option.active {
+  background: #000;
+  color: white;
+  border-color: #000;
+}
+
+.card-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.save-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.save-card input {
+  width: 18px;
+  height: 18px;
+}
+
+.alternative-payment {
+  padding: 16px;
+  background: #F7F7F7;
+  border-radius: 12px;
+  border: 1px dashed #E0E0E0;
+  font-family: 'Poppins', sans-serif;
+  color: #555;
+}
+
+/* Success */
+.success-card {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #E0E0E0;
+  padding: 48px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #E8F7EE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0F8F3C;
+}
+
+.success-card h2 {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.success-card p {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #555;
+}
+
+.success-btn {
+  margin-top: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: none;
+  background: #000;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.success-btn:hover {
+  opacity: 0.9;
+}
+
+/* Additional Clipping-specific styles */
+.header-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.header-icon svg {
+  color: #000;
+}
+
+.header-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* File Upload Styles for Clipping */
+.file-upload-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-upload-button {
+  padding: 10px 20px;
+  background: linear-gradient(360deg, #000000 0%, #470573 100%);
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.file-upload-button:hover {
+  opacity: 0.9;
+}
+
+.file-name {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Categories Grid */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.category-option {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category-option input[type="radio"] {
+  display: none;
+}
+
+.category-option.selected {
+  background: linear-gradient(0deg, #454545 0%, #000000 100%);
+  border-color: #000;
+}
+
+.category-option .category-label {
+  font-family: "Saans-TRIAL", sans-serif;
+  font-weight: 380;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #333;
+}
+
+.category-option.selected .category-label {
+  color: white;
+}
+
+/* Requirement Input Wrapper */
+.requirement-input-wrapper {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.add-requirement-btn {
+  width: 44px;
+  height: 44px;
+  background: #000;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-requirement-btn:hover {
+  background: #333;
+}
+
+.requirements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.requirement-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #F8F8F8;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+}
+
+.requirement-item span {
+  font-size: 14px;
+  color: #333;
+  flex: 1;
+  font-family: 'Poppins', sans-serif;
+}
+
+.remove-requirement-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: #999;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.remove-requirement-btn:hover {
+  color: #D32F2F;
+}
+
+/* Form Select */
+.form-select {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+  background: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #000;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.form-select:focus {
+  border: 1px solid rgba(104, 104, 104, 1);
+  outline: none;
+  box-shadow: none;
+}
+
+/* Platform Options */
+.platform-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.platform-option {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.platform-option input[type="radio"] {
+  display: none;
+}
+
+.platform-option .platform-label {
+  font-family: "Saans-TRIAL", sans-serif;
+  font-weight: 380;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #333;
+}
+
+.platform-option.selected {
+  background: linear-gradient(0deg, #454545 0%, #000000 100%);
+  border-color: #000;
+}
+
+.platform-option.selected .platform-label {
+  color: white;
+}
+
+/* Input with Prefix */
+.input-with-prefix {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-prefix {
+  position: absolute;
+  left: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #666;
+  pointer-events: none;
+}
+
+.form-input.with-prefix {
+  padding-left: 40px;
+}
+
+/* Payment Cards */
+.payment-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.payment-card {
+  padding: 20px;
+  background: linear-gradient(135deg, #6B2D8F 0%, #470573 100%);
+  border-radius: 12px;
+  color: white;
+}
+
+.payment-card-label {
+  font-size: 13px;
+  margin-bottom: 8px;
+  opacity: 0.9;
+  font-family: 'Poppins', sans-serif;
+}
+
+.payment-card-value {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Step Title */
+.step-title {
+  font-family: "Saans-TRIAL", sans-serif;
+  font-weight: 570;
+  font-style: normal;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: #000;
+  margin: 0 0 32px 0;
+}
+
+/* Review Section Styles */
+.review-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.review-section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.edit-button {
+  background: none;
+  border: none;
+  color: #6B2D8F;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.2s ease;
+}
+
+.edit-button:hover {
+  text-decoration: underline;
+}
+
+.review-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.review-item {
+  display: flex;
+  gap: 8px;
+}
+
+.review-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  min-width: 150px;
+}
+
+.review-value {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #333;
+  flex: 1;
+}
+
+/* CLIPPING: Header - reducir margin-bottom */
+.clipping-campaign-container .campaign-header{
+  margin-bottom: 10px !important; /* antes probablemente 20-40 */
+}
+
+/* Si tu espacio viene del subtitle */
+.clipping-campaign-container .campaign-subtitle{
+  margin-bottom: 0 !important;
+}
+
+/* Si tu espacio viene del botón "Regresar" arriba */
+.clipping-campaign-page .back-to-dashboard-btn{
+  margin-bottom: 20px !important; /* antes 40 */
+}
+
+/* =========================
+   STEPPER - ICON overlay (degradado blanco 50% -> transparente)
+   ========================= */
+.influencers-ugc-campaign-container .stepper-step,
+.clipping-campaign-container .stepper-step{
+  position: relative;
+  overflow: hidden; /* respeta el círculo */
+}
+
+.influencers-ugc-campaign-container .stepper-step::after,
+.clipping-campaign-container .stepper-step::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 3;
+
+  /* abajo blanco 50% (opacity 0.5), arriba transparente */
+  background: linear-gradient(
+          to top,
+          rgba(255, 255, 255, 0.35),
+          rgba(255, 255, 255, 0)
+  );
+}
+
+/* Asegura que el ícono quede debajo del overlay */
+.influencers-ugc-campaign-container .stepper-step-icon,
+.clipping-campaign-container .stepper-step-icon{
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   STEPPER - LABEL (activo e inactivo)
+   ========================= */
+.influencers-ugc-campaign-container .stepper-label,
+.clipping-campaign-container .stepper-label{
+  font-family: "Saans-TRIAL", sans-serif !important;
+  font-weight: 380 !important;
+  font-style: normal !important;
+  font-size: 16px !important;
+  line-height: 1 !important; /* 100% */
+  letter-spacing: 0 !important;
+  text-align: center !important;
+
+  /* mantén tu color inactivo si quieres */
+  /* color: #999; */
+}
+
+.influencers-ugc-campaign-container .stepper-label.active,
+.clipping-campaign-container .stepper-label.active{
+  font-family: "Saans-TRIAL", sans-serif !important;
+  font-weight: 380 !important; /* igual que inactivo */
+  font-style: normal !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+  text-align: center !important;
+
+  /* mantén tu color activo si quieres */
+  /* color: #000; */
+}
+
+/* =========================
+   STEPPER - reducir padding top/bottom + quitar líneas
+   ========================= */
+.influencers-ugc-campaign-container .stepper,
+.clipping-campaign-container .stepper{
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+  margin-top: 0 !important;
+  margin-bottom: 6px !important; /* ajusta si quieres más pegado */
+}
+
+/* Quitar las líneas entre steps */
+.influencers-ugc-campaign-container .stepper-line,
+.clipping-campaign-container .stepper-line{
+  display: none !important;
+}
+
+/* STEP 1: Nombre de campaña + Logo (primer bloque) */
+.clipping-campaign-container.step-1 .form-row{
+  margin-bottom: 28px !important; /* antes era 0 / o heredaba el espacio grande */
+}
+
+/* por si el spacing viene del .form-group contenedor */
+.clipping-campaign-container.step-1 .form-row .form-group{
+  margin-bottom: 0 !important;
+}
+
+/* STEP 1 (CLIPPING): Descripción de la campaña - reducir espacio inferior */
+.clipping-campaign-container.step-1 .form-textarea{
+  margin-bottom: 0 !important;
+}
+
+/* el espacio normalmente viene de aquí */
+.clipping-campaign-container.step-1 .form-group{
+  margin-bottom: 28px !important; /* antes ~40px */
+}
+
+/* opcional: si quieres tocar SOLO el form-group de Descripción (más seguro) */
+.clipping-campaign-container.step-1 .form-textarea{
+  display: block;
+}
+
+/* ✅ Mostrar círculo para radio y checkbox dentro de .radio-option */
+.radio-option input[type="radio"],
+.radio-option input[type="checkbox"]{
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 24px;
+  height: 24px;
+
+  border: 1px solid #333;
+  border-radius: 50%;
+
+  background: transparent;
+  margin-right: 12px;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ✅ cuando está seleccionado (y el contenedor ya tiene fondo oscuro) */
+.radio-option input[type="radio"]:checked,
+.radio-option input[type="checkbox"]:checked{
+  border-color: #fff;
+}
+
+/* ✅ dot interno */
+.radio-option input[type="radio"]:checked::after,
+.radio-option input[type="checkbox"]:checked::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* =========================
+   STEP 1 (CLIPPING) - Categorías multi (checkbox)
+   Círculo blanco puro cuando está checked (sin punto interno)
+   ========================= */
+.clipping-campaign-container.step-1 .radio-option input[type="checkbox"]{
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+  border: 1px solid #333;     /* estado normal: borde oscuro */
+  background: transparent;     /* estado normal: sin relleno */
+
+  margin-right: 12px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* ✅ seleccionado: círculo blanco puro */
+.clipping-campaign-container.step-1 .radio-option input[type="checkbox"]:checked{
+  border-color: #fff;
+  background: #fff;
+}
+
+/* ✅ por si tenías ::after en algún lado, lo anulamos para que sea "puro" */
+.clipping-campaign-container.step-1 .radio-option input[type="checkbox"]::after{
+  content: none !important;
+}
+
+/* =========================
+   STEP 2 (CLIPPING) - Requisitos de contenido: reducir margin-bottom del bloque
+   ========================= */
+.clipping-campaign-container:not(.step-1) .step-content .form-group:first-child{
+  margin-bottom: 24px !important; /* antes 40px */
+}
+
+/* (opcional) si también quieres menos espacio bajo el input + botón */
+.clipping-campaign-container:not(.step-1) .requirement-input-group{
+  margin-bottom: 10px !important; /* antes 16px */
+}
+
+/* =========================
+   STEP 2 (CLIPPING) - Vincula tu canal de streaming
+   - select más angosto (izq)
+   - input más ancho (der)
+   - reducir margin-bottom del bloque
+   ========================= */
+
+/* Reducir margin-bottom del form-group "Vincula tu canal de streaming" */
+.clipping-campaign-container.step-2 .step-content .form-group:nth-of-type(2){
+  margin-bottom: 10px !important; /* antes 40px */
+}
+
+/* Ajustar proporciones del grid: izq (select) menor, der (input) mayor */
+.clipping-campaign-container.step-2 .step-content .form-group:nth-of-type(2) .form-row{
+  grid-template-columns: 0.35fr 1.30fr !important;
+  column-gap: 19px !important; /* opcional: reduce separación */
+}
+
+/* =========================
+   STEP 2 (CLIPPING) - Plataformas multiopción
+   MISMO estilo que Categorías Step 1:
+   - normal: borde oscuro, fondo transparente
+   - selected: círculo blanco puro SIN dot interno
+   ========================= */
+
+.clipping-campaign-container.step-2 .platform-multi-group{
+  margin-bottom: 24px !important; /* antes 40px */
+}
+
+.clipping-campaign-container.step-2 .platform-multi .checkbox-option input[type="checkbox"]{
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+  border: 1px solid #333;     /* igual que step-1 */
+  background: transparent;     /* igual que step-1 */
+
+  margin-right: 12px;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* seleccionado: círculo blanco puro */
+.clipping-campaign-container.step-2 .platform-multi .checkbox-option input[type="checkbox"]:checked{
+  border-color: #fff;
+  background: #fff;
+}
+
+/* IMPORTANTÍSIMO: sin dot interno (igual que step-1) */
+.clipping-campaign-container.step-2 .platform-multi .checkbox-option input[type="checkbox"]::after{
+  content: none !important;
+}
+
+/* texto igual */
+.clipping-campaign-container.step-2 .platform-multi .checkbox-option span{
+  font-family: "Saans-TRIAL", sans-serif;
+  font-weight: 380;
+  font-size: 15px;
+  line-height: 1;
+}
+
+/* =========================
+   Custom Select (para reemplazar <select>)
+   ========================= */
+
+.custom-select {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select-trigger {
+  width: 100%;
+  padding: 9px 15px;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.custom-select-trigger:hover {
+  border-color: #999;
+}
+
+.custom-select-trigger.open {
+  border-color: rgba(104, 104, 104, 1);
+}
+
+.custom-select-trigger-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0; /* para truncar texto */
+}
+
+.custom-select-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.custom-select-icon-placeholder {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.06);
+  flex-shrink: 0;
+}
+
+.custom-select-value {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select-value.placeholder {
+  font-family: "Saans-TRIAL", sans-serif;
+  font-weight: 380;
+  font-size: 17px;
+  color: rgba(104, 104, 104, 1);
+  opacity: 0.7;
+}
+
+.custom-select-chevron {
+  font-size: 14px;
+  color: #666;
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+
+.custom-select-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+
+  background: #fff;
+  border: 1px solid #E0E0E0;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  padding: 8px;
+}
+
+.custom-select-option {
+  width: 100%;
+  border: none;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 12px;
+  border-radius: 10px;
+
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.custom-select-option:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+.custom-select-option.active {
+  background: rgba(0,0,0,0.06);
+}
+
+.custom-select-option-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #000;
+}
+
+/* =========================
+   STEP 3 (CLIPPING) - Ajustes
+   ========================= */
+
+/* Sección: Presupuesto total + CPM
+   - form-hint +2px
+   - menos margin-bottom en esos form-group
+*/
+.clipping-campaign-container.step-3 .form-hint{
+  font-size: 15px !important; /* antes 13px */
+}
+
+.clipping-campaign-container.step-3 .step-content > .form-row:first-of-type .form-group{
+  margin-bottom: 18px !important; /* antes 40px */
+}
+
+/* Sección: Pago mínimo + Pago máximo
+   - menos espacio entre payment-card-left y right
+   - menos padding top/bottom del card
+*/
+.clipping-campaign-container.step-3 .payment-card{
+  padding-top: 14px !important;   /* antes 20px */
+  padding-bottom: 14px !important;/* antes 20px */
+  gap: 12px !important;           /* antes 18px (reduce el “espaciado a la derecha” del left) */
+}
+
+.clipping-campaign-container.step-3 .payment-card-left{
+  min-width: 95px !important;     /* antes 110px */
+}
+
+.input-error { outline: 2px solid #ff4d4f; }
+.form-error { margin-top: 6px; font-size: 13px; color: #ff4d4f; }
+.form-hint { margin-top: 6px; font-size: 13px; color: #716F72; }

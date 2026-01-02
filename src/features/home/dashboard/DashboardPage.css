@@ -1,0 +1,240 @@
+.dashboard-page {
+  flex: 1;
+  padding: 40px;
+}
+
+.dashboard-header {
+  margin-bottom: 30px;
+}
+
+.dashboard-title {
+  font-family: "Saans-TRIAL", "Poppins", sans-serif;
+  font-weight: 570;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #000;
+  margin: 0 0 6px 0;
+}
+
+.dashboard-subtitle {
+  font-family: "Saans-TRIAL", "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #000;
+  margin: 0;
+}
+
+/* Métricas */
+.metrics-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.metric-card {
+  width: 289.2px;
+  height: 104px;
+
+  padding: 15px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(227, 227, 227, 1);
+  background: rgba(255, 255, 255, 1);
+
+  box-shadow: none;
+  cursor: pointer;
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.metric-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.metric-card.active {
+  border-color: transparent;
+  color: #fff;
+  background: linear-gradient(0deg, #454545 0%, #000000 100%);
+}
+
+.metric-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.metric-title {
+  font-family: "Saans-TRIAL", "Poppins", sans-serif;
+  font-weight: 570;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: inherit;
+}
+
+.metric-card.active .metric-title {
+  color: white;
+}
+
+.metric-icon {
+  width: 20px;
+  height: 20px;
+  color: currentColor;
+}
+
+.metric-value {
+  font-family: "Saans-TRIAL", "Poppins", sans-serif;
+  font-weight: 670;
+  font-size: 25px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: inherit;
+}
+
+.metric-card.active .metric-value {
+  color: white;
+}
+
+.metric-description {
+  font-family: "Saans-TRIAL", "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.metric-card.active .metric-description {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.metric-card.active .metric-icon {
+  stroke: white;
+}
+
+.campaigns-section {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  margin-top: 32px;
+}
+
+/* Header: 1ra fila título / 2da fila tabs + search */
+.campaigns-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 24px;
+  margin-bottom: 22px;
+}
+
+.campaigns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.campaigns-title {
+  flex-basis: 100%;
+  margin: 0;
+  font-family: 'Saans-TRIAL', 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 30px;
+  font-weight: 600; /* aprox 570 */
+  line-height: 1;
+
+  /* Figma indica “background gradient” -> lo aplicamos como texto con gradient */
+  background: linear-gradient(0deg, #454545 0%, #000000 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.campaigns-filters {
+  display: flex;
+  gap: 12px;
+  margin: 0;
+}
+
+/* Tabs (Activas / Culminadas / Todas) */
+.campaigns-section .filter-button {
+  width: 116.6667px;
+  height: 31px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Saans-TRIAL', 'Poppins', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 600; /* aprox 570 */
+  line-height: 1;
+  color: #000;
+
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.campaigns-section .filter-button.active {
+  background: linear-gradient(0deg, #454545 0%, #000000 100%);
+  color: #fff;
+}
+
+.campaigns-section .filter-button:not(.active):hover {
+  background: #f2f2f2;
+}
+
+.filter-button:not(.active):hover {
+  background: #f0f0f0;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 420px;
+  height: 48px;
+
+  padding: 12px 18px 12px 44px;
+  border: 1px solid #e3e3e3;
+  border-radius: 14px;
+
+  font-family: 'Saans-TRIAL', 'Poppins', system-ui, sans-serif;
+  font-size: 16px;
+}
+
+.search-box:focus {
+  outline: none;
+  border-color: #470573;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-state-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #666;
+}
+
+/* Grid de campañas: un poco más “aire” como el Figma */
+.campaigns-grid {
+  gap: 28px;
+  margin-top: 18px;
+}
+

@@ -1,0 +1,190 @@
+.sidebar-container {
+  width: 279px;
+  height: 100vh;
+  position: fixed;
+  left: -9px;
+  top: 0;
+  background: rgba(0, 0, 0, 1);
+  border-top-right-radius: 30px;
+  padding: 44px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  z-index: 1000;
+}
+
+/* Logo */
+.sidebar-logo-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-logo {
+  width: 124px;
+  height: 43px;
+}
+
+/* Botón de configuración de cuenta */
+.account-button {
+  width: 239px;
+  height: 69px;
+  padding: 0 10px 0 13px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 20px;
+  background: linear-gradient(360deg, #000000 0%, #470573 100%);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.account-button:hover {
+  opacity: 0.9;
+}
+
+.account-image {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.account-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+}
+
+.account-name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Saans-TRIAL', 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 570;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
+}
+
+.verified-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.account-type {
+  font-family: 'Saans-TRIAL', 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
+}
+
+.dropdown-icon {
+  color: white;
+  width: 16.8px;
+  height: 33.6px;
+  opacity: 1;
+  flex-shrink: 0;
+}
+
+/* Botón Crear Campaña */
+.create-campaign-button {
+  width: 239px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Saans-TRIAL', 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(0, 0, 0, 1);
+  text-decoration: none;
+}
+
+.create-campaign-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+.create-campaign-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Lista de opciones */
+.nav-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-option {
+  width: 239px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Saans-TRIAL', 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  text-decoration: none;
+}
+
+/* Estado no seleccionado */
+.nav-option:not(.active) {
+  background: rgba(0, 0, 0, 1);
+  color: white;
+}
+
+.nav-option:not(.active) .nav-icon {
+  color: white;
+}
+
+.nav-option:not(.active):hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Estado seleccionado */
+.nav-option.active {
+  background: rgba(255, 255, 255, 1);
+  color: black;
+  backdrop-filter: blur(5.5px);
+}
+
+.nav-option.active .nav-icon {
+  color: black;
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  object-fit: contain;
+}

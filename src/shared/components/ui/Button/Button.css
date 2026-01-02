@@ -1,0 +1,83 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  outline: none;
+  max-width: 436px;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+}
+
+/* Botón primario (Ingresar) */
+.button-primary {
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(0deg, #454545 0%, #000000 100%);
+  color: #ffffff;
+}
+
+.button-primary:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.button-primary:disabled {
+  background: rgba(199, 192, 192, 1);
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+}
+
+.button-primary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Botón secundario (Google y Apple) */
+.button-secondary {
+  height: 40px;
+  border-radius: 8px;
+  padding: 9px 121px;
+  background: rgba(238, 238, 238, 1);
+  color: rgba(0, 0, 0, 1);
+  border: none;
+}
+
+.button-secondary:hover:not(:disabled) {
+  background: rgba(228, 228, 228, 1);
+}
+
+.button-secondary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Botón outline (Registrarme) - styles are in LoginForm.css */
+.button-outline {
+  background-color: transparent;
+  color: #1f2937;
+  border: 1px solid #e5e7eb;
+}
+
+.button-outline:hover:not(:disabled) {
+  background-color: #f9fafb;
+}
+
+.button-full-width {
+  width: 100%;
+}
+
+.button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

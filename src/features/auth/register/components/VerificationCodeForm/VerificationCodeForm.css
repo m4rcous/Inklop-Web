@@ -1,0 +1,202 @@
+.verification-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgba(241, 240, 238, 1);
+  padding: 20px;
+}
+
+.verification-card {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 30px;
+  padding: 50px 30px;
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 37px;
+  text-align: center;
+}
+
+.verification-icon {
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verification-icon img,
+.verification-icon svg {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+}
+
+.verification-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 570;
+  font-size: 25px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: rgba(0, 0, 0, 1);
+  width: 100%;
+  max-width: 560px;
+  margin: 0;
+}
+
+.verification-subtitle {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 380;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: rgba(113, 111, 114, 1);
+  width: 100%;
+  max-width: 560px;
+  margin: 0;
+}
+
+.verification-subtitle strong {
+  color: rgba(113, 111, 114, 1);
+  font-weight: 380;
+}
+
+.verification-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.code-inputs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.code-input {
+  width: 48px;
+  height: 56px;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  border: 2px solid rgba(241, 240, 238, 1);
+  border-radius: 10px;
+  background-color: rgba(241, 240, 238, 1);
+  color: rgba(0, 0, 0, 1);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.code-input:focus {
+  border-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.code-input:not(:placeholder-shown) {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Override button styles for verification button */
+.verification-form .button-primary {
+  width: 218px !important;
+  height: 38px !important;
+  border-radius: 10px !important;
+  padding: 10px !important;
+  gap: 10px;
+  transition: all 0.3s ease-out !important;
+}
+
+.verification-form .button-primary:disabled {
+  background: rgba(199, 192, 192, 1) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.verification-form .button-primary:not(:disabled) {
+  background: linear-gradient(0deg, #454545 0%, #000000 100%) !important;
+}
+
+.verification-email{
+  font-weight: 700;
+  color: rgba(0, 0, 0, 1);
+}
+
+/* Contenedor tipo “pill” */
+.code-inputs{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 360px;
+
+  background: rgba(241, 240, 238, 1);
+  border-radius: 16px;
+  padding: 18px 24px;
+  gap: 16px;
+}
+
+/* Cada dígito como “dash” */
+.code-input{
+  width: 20px;
+  height: 28px;
+  text-align: center;
+
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+  border-radius: 0;
+  background: transparent;
+
+  font-size: 22px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1);
+
+  outline: none;
+  padding: 0;
+}
+
+.code-input:focus{
+  border-bottom-color: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 680px) {
+  .verification-card {
+    max-width: 90%;
+    padding: 40px 24px;
+  }
+
+  .verification-title,
+  .verification-subtitle {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .verification-card {
+    padding: 32px 20px;
+    gap: 24px;
+  }
+
+  .code-inputs {
+    gap: 8px;
+  }
+
+  .code-input {
+    width: 40px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  .verification-form .button-primary {
+    width: 180px !important;
+  }
+}
