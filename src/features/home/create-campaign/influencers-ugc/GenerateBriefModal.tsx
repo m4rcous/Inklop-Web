@@ -231,7 +231,7 @@ export const GenerateBriefModal: React.FC<Props> = ({
                                 isGenerating ? "is-loading" : (!isValidPrompt ? "is-disabled" : "")
                             }`}
                             onClick={handleGenerate}
-                            disabled={!isValidPrompt}  // OJO: solo se deshabilita por inválido, NO por loading
+                            disabled={!canClickGenerate}  // OJO: solo se deshabilita por inválido, NO por loading
                             aria-busy={isGenerating}
                         >
                             {!isGenerating ? (

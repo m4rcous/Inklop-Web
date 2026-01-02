@@ -26,13 +26,6 @@ export const SuccessPage: React.FC = () => {
     </svg>
   );
 
-  const ChartIcon = () => (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-      <path d="M3 3v18h18" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M18 9l-5 5-4-4-4 4" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-
   return (
     <div className="success-page">
       <div className="success-container">
